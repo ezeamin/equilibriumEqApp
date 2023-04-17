@@ -75,18 +75,24 @@ const App: Component = () => {
       </Typography>
       <Divider sx={{ mb: 1 }} />
       <form onSubmit={handleSubmit}>
-        <Stack direction='row' alignItems='center'>
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          // @ts-expect-error
+          alignItems={{ xs: 'flex-start', sm: 'center' }}
+          gap={1}
+        >
           <Typography variant='body1' component='p'>
             Curva <strong>oferta</strong>:
           </Typography>
-          <Equation
-            sx={{ ml: 6 }}
-            type='1'
-            values={values}
-            handleChange={handleChange}
-          />
+          <Equation type='1' values={values} handleChange={handleChange} />
         </Stack>
-        <Stack direction='row' alignItems='center' sx={{ mt: 2 }}>
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          // @ts-expect-error
+          alignItems={{ xs: 'flex-start', sm: 'center' }}
+          gap={1}
+          sx={{ mt: 2 }}
+        >
           <Typography variant='body1' component='p'>
             Curva <strong>demanda</strong>:
           </Typography>
